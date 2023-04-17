@@ -15,11 +15,10 @@ def check_hash(file_path):
     file_hash = md5_hash(file_path)
     counter=0
     malware_hash = list(open("main\hash_key.txt", 'r').read().split("\n"))
-    malware_name = list(open("main\hash_name.txt", 'r').read().split("\n"))
     
     for i in malware_hash: 
         if i == file_hash:
-            return malware_name[counter]
+            return "Malware Detected"
         counter+=1
     return "No Malware"
         

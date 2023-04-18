@@ -1,3 +1,3 @@
 import engine
 
-engine.ram_booster()
+engine.junk_remover()

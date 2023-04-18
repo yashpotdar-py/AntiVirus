@@ -79,17 +79,17 @@ def junk_remover():
 
     temp_list = list()
 
-    username = os.environ.get('USERNAME').upper().split(" ")
-    print(username)
-    for (dirpath, dirname, filename) in os.walk("C:\\Windows\\Temp"):
-        temp_list += [os.path.join(dirpath, file) for file in filename]
-        temp_list += [os.path.join(dirpath, file) for file in dirname]
-    for (dirpath, dirname, filename) in os.walk(f"C:\\Users\\{username[0]}~1\\AppData\\Local\\Temp"):
-        temp_list += [os.path.join(dirpath, file) for file in filename]
-        temp_list += [os.path.join(dirpath, file) for file in dirname]
-    for (dirpath, dirname, filename) in os.walk("C:\\Windows\\Prefetch"):
-        temp_list += [os.path.join(dirpath, file) for file in filename]
-        temp_list += [os.path.join(dirpath, file) for file in dirname]
+    user_name = os.environ.get('USERNAME').upper().split(" ")
+    print(user_name)
+    for (dir_path, dir_name, file_name) in os.walk("C:\\Windows\\Temp"):
+        temp_list += [os.path.join(dir_path, file) for file in file_name]
+        temp_list += [os.path.join(dir_path, file) for file in dir_name]
+    for (dir_path, dir_name, file_name) in os.walk(f"C:\\Users\\{user_name[0]}~1\\AppData\\Local\\Temp"):
+        temp_list += [os.path.join(dir_path, file) for file in file_name]
+        temp_list += [os.path.join(dir_path, file) for file in dir_name]
+    for (dir_path, dir_name, file_name) in os.walk("C:\\Windows\\Prefetch"):
+        temp_list += [os.path.join(dir_path, file) for file in file_name]
+        temp_list += [os.path.join(dir_path, file) for file in dir_name]
     if temp_list:
         for i in temp_list:
             print(i)
